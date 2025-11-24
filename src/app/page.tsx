@@ -1,65 +1,125 @@
-import Image from "next/image";
 
-export default function Home() {
+import Link from "next/link";
+import Image from "next/image";
+import { Button } from "@/components/ui/button"
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger,
+} from "@/components/ui/tooltip"
+
+import {
+  Menubar,
+  MenubarCheckboxItem,
+  MenubarContent,
+  MenubarItem,
+  MenubarMenu,
+  MenubarRadioGroup,
+  MenubarRadioItem,
+  MenubarSeparator,
+  MenubarShortcut,
+  MenubarSub,
+  MenubarSubContent,
+  MenubarSubTrigger,
+  MenubarTrigger,
+} from "@/components/ui/menubar"
+import {
+  Pagination,
+  PaginationContent,
+  PaginationEllipsis,
+  PaginationItem,
+  PaginationLink,
+  PaginationNext,
+  PaginationPrevious,
+} from "@/components/ui/pagination"
+import {
+  ButtonGroup,
+  ButtonGroupSeparator,
+  ButtonGroupText,
+} from "@/components/ui/button-group"
+
+import { Input } from "@/components/ui/input"
+import { ChevronDownIcon, SlashIcon } from "lucide-react"
+import {
+  Breadcrumb,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbList,
+  BreadcrumbPage,
+  BreadcrumbSeparator,
+} from "@/components/ui/breadcrumb"
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu"
+
+
+export const metadata = {
+  title: "Home",
+  description: "Index page",
+}
+
+const user = {
+  name: "John Ethan B. Dela Cruz",
+  role: "Student",
+  course: "Computer Science"
+}
+export default function Index() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
+    <>
+
+    {/* FIXED HEADER */}
+<div className="fixed top-0 left-0 right-0 z-50 h-18 border border-black relative">
+  <div className="flex items-center justify-between">
+
+    {/* Left section */}
+    <div className="flex items-center border border-black rounded-sm">
+      <Avatar className="mr-2">
+        <AvatarImage src="https://github.com/shadcn.png" />
+      </Avatar>
+      <span className="text-md font-semibold">Index Page</span>
     </div>
-  );
+  </div>
+<nav className = "mt-20 text-sm relative bottom-20">
+  <a
+  href="/register"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="text-blue-500 hover:underline">
+   <Button variant="outline" className="text-sm mb-2">Register</Button>
+  </a>
+  <a
+  href="/login"
+  rel="noopener noreferrer"
+  className="text-blue-500 hover:underline">
+   <Button variant="outline" className="text-sm mb-2">Login</Button>
+  </a>
+  <a
+  href="/contact"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="text-blue-500 hover:underline">
+   <Button variant="outline" className="text-sm mb-2">Dashboard</Button>
+  </a>
+
+</nav>
+</div>
+<main className = " ml-2">
+
+  <article>
+    <p>Welcome to Index. Select any of the links above to go to Youtube Clone main site</p>
+    <p>Nextjs + Nestjs + Tailwind</p>
+<p>All components of ShadCN</p>
+
+
+
+
+
+</article>
+</main>
+    </>
+  )
 }
