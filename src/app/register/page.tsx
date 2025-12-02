@@ -8,6 +8,9 @@ import { API_BASE } from '@/lib/config';
 
 import { FormEvent } from 'react';
 
+import Link from "next/link";
+import Image from "next/image";
+
 export default function RegisterPage() {
   const router = useRouter();
 
@@ -36,8 +39,17 @@ export default function RegisterPage() {
   }
 
   return (
-    <div className="flex items-center justify-center h-screen">
+    <>
+    <div className = "bg-white-300">
+    <div className="flex items-center justify-center h-screen bg-white">
       <Card className="w-full max-w-sm p-6">
+        <Image
+                  src="/google.png"
+                  alt="Homepage"
+                  width={60}
+                  height={60}
+                  className="relative left-35"
+                />
         <CardContent>
           <h1 className="text-xl font-bold mb-4">Register</h1>
 
@@ -74,5 +86,8 @@ export default function RegisterPage() {
         </CardContent>
       </Card>
     </div>
+    </div>
+</>
+
   );
 }

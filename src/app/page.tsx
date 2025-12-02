@@ -98,21 +98,22 @@ export default function Index() {
    <Button variant="outline" className="text-sm mb-2">Login</Button>
   </a>
   <a
-  href="/contact"
+  href="/dashboard"
   target="_blank"
   rel="noopener noreferrer"
   className="text-blue-500 hover:underline">
    <Button variant="outline" className="text-sm mb-2">Dashboard</Button>
   </a>
 
+
 </nav>
 </div>
 <main className = " ml-2">
 
   <article>
-    <p>Welcome to Index. Select any of the links above to go to Youtube Clone main site</p>
+    <p>Welcome to Index. Select any of the links above to go to Youtube Clone main site.</p>
     <p>Nextjs + Nestjs + Tailwind</p>
-<p>All components of ShadCN</p>
+
 
 
 
